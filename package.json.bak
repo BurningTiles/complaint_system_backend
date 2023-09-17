@@ -1,0 +1,34 @@
+{
+	"name": "ne_backend",
+	"version": "1.0.0",
+	"description": "NE - Backend",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "pm2 start src/index.js --name ne_backend --no-daemon --no-autorestart --watch src/ --log app.log --time",
+		"deploy": "pm2 start src/index.js --name ne_backend -i max --log deploy.log --time",
+		"stop": "pm2 stop ne_backend",
+		"kill": "pm2 delete ne_backend",
+		"logs": "pm2 logs ne_backend",
+		"monitor": "pm2 monit ne_backend",
+		"restart": "pm2 restart ne_backend",
+		"list": "pm2 list"
+	},
+	"keywords": [
+		"NE",
+		"NE_Backend",
+		"Backend"
+	],
+	"author": "Manish Kumawat, Shivam Bhatt",
+	"license": "ISC",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2",
+		"mongoose": "^7.4.3",
+		"pm2": "^5.3.0"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.1"
+	}
+}
